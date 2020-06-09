@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  webapp:
+    image: webapp
+    restart: always
+    build:
+      context: ./web-app
+    container_name: webapp-c
+    ports:
+      - "8081:8080"
+  backend:
+    image: backend
+    restart: always
+    build:
+      context: ./python-src
+    container_name: backend-c
+    ports:
+      - "5000:5000"
+
